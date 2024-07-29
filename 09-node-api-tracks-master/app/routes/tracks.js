@@ -6,6 +6,8 @@ const checkRoleAuth = require('../middleware/roleAuth')
 const { getItems, getItem, createItem, deleteItem, updateItem } = require('../controlles/tracks')
 const { validateCreate } = require('../validators/users')
 
+//para proteger la ruta se debe de poner checkAuth dentro del router como sieguiente paso, por ejemplo : router.get('/', checkAuth, getItems)
+
 router.get('/', getItems) //TODO: http://localhost:3001/api/1.0/tracks 🔴🔴
 
 router.get('/:id', checkOrigin, getItem)
